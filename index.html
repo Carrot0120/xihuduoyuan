@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Start your development with Steller landing page.">
+    <meta name="author" content="Devcrud">
+	
+    <title>湖東休閒農業區</title>
+    <!-- font icons -->
+    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+    <!-- Bootstrap + Steller main styles -->
+    <link rel="stylesheet" href="assets/css/steller.css">
+    <style>
+        .fb-button {
+            width: 40px; /* 调整图片的宽度 */
+            height: auto; /* 自动调整高度以保持比例 */
+            transition: transform 0.3s ease; /* 添加过渡效果 */
+        }
+        .fb-button:hover {
+            transform: scale(1.2); /* 鼠标移过时放大图片 */
+        }
+        .ig-button {
+            width: 45px; /* 调整图片的宽度 */
+            height: auto; /* 自动调整高度以保持比例 */
+            transition: transform 0.3s ease; /* 添加过渡效果 */
+            position: relative; /* 设置相对定位 */
+            top: -3px; /* 向上移动10像素 */
+        }
+        .ig-button:hover {
+            transform: scale(1.2); /* 鼠标移过时放大图片 */
+        }
+        .socials a {
+            margin-right: 10px; /* 调整链接之间的间距 */
+        }
+        .yt-button {
+            width: 40px; /* 调整图片的宽度 */
+            height: auto; /* 自动调整高度以保持比例 */
+            transition: transform 0.3s ease; /* 添加过渡效果 */
+        }
+        .yt-button:hover {
+            transform: scale(1.2); /* 鼠标移过时放大图片 */
+        }
+        .header .container .img-holder {
+            width: 100%;
+            max-width: 800px;
+            overflow: hidden;
+            position: relative;
+            margin-left: auto;
+            margin-right: -2rem;
+        }
+        .header .container .img-holder img {
+            width: 100%;
+            transition: transform 0.5s ease;
+            -webkit-filter: drop-shadow(0 -4px 20px rgba(206, 212, 218, 0.4));
+                    filter: drop-shadow(0 -4px 20px rgba(206, 212, 218, 0.4));
+        }
+        .arrow-button {
+            position: absolute;
+            top: 50%;
+            width: 50px; /* 调整为圆形的直径 */
+            height: 50px; /* 调整为圆形的直径 */
+            background-color: rgba(255, 255, 255, 0.5); /* 白色半透明背景 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            border-radius: 50%; /* 圆形按钮 */
+            transform: translateY(-50%); /* 垂直居中对齐 */
+            background-size: 24px; /* 设置背景图片的大小 */
+            background-position: center; /* 背景图片在圆形按钮中居中对齐 */
+            background-repeat: no-repeat; /* 不重复背景图片 */
+        }
+        .arrow-button.left {
+            left: 40px; /* 增加左边按钮的偏移量 */
+			background-image: url('assets/imgs/左.png');
+        }
+        .arrow-button.right {
+            right: 10px;
+            background-image: url('assets/imgs/右.png');
+        }
+        .arrow-button:hover {
+            background-color: rgba(255, 255, 255, 0.8); /* 鼠标悬停时的背景颜色 */
+        }
+		.green-bar {
+            width: 100%;
+            height: 2cm;
+            background-color: rgba(0, 128, 0, 0.5); /* 半透明綠色 */
+            position: absolute; /* 絕對定位 */
+            left: 50%; /* 水平方向中間 */
+            transform: translateX(-50%); /* 水平居中 */
+            animation: slide 3s ease-in-out infinite alternate; /* 滑動動畫 */
+            opacity: 0.8; /* 初始透明度 */
+        }
+        .bar1 {
+            top: 0%; /* 第一條色塊位置 */
+            animation-delay: 0s; /* 無延遲 */
+        }
+        .bar2 {
+            top: 0%; /* 第二條色塊位置 */
+            animation-delay: 1s; /* 延遲1秒 */
+        }
+        .bar3 {
+            top: 0%; /* 第三條色塊位置 */
+            animation-delay: 2s; /* 延遲2秒 */
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translate(-50%, 0) scale(1); /* 初始位置 */
+                opacity: 0.5; /* 初始透明度 */
+            }
+            100% {
+                transform: translate(-50%, 10px) scale(1.1); /* 結束位置 */
+                opacity: 1; /* 結束透明度 */
+            }
+        }
+		
+    </style>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+
+    <!-- Page navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" data-spy="affix" data-offset-top="0">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="assets/imgs/logo.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">首頁</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">西湖</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">景點介紹</a>
+                    </li>                   
+                    <li class="nav-item">
+                        <a class="nav-link" href="#blog">影片介紹</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">AI導遊</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#map">地圖</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">遊嘍西酷</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary rounded ml-4" href="components.html">最新活動</a>
+                    </li>
+                </ul>
+            </div>
+        </div>          
+    </nav>
+    <!-- End of page navigation -->
+
+    <!-- Page Header -->
+    <header class="header" id="home">
+        <div class="container">
+            <div class="infos">
+                <h6 class="subtitle">歡迎來到</h6>
+                <b><font size="25" color="green">湖東休閒農業區</font></b>
+                <p><font size="4">🍀春迎柚花香🍀夏逢黃金稻</font></p>
+				<p><font size="4">🍀秋嚐文旦柚🍀冬食好味道</font></p>
+
+                <div class="buttons pt-3">
+                    <button class="btn btn-primary rounded">最新活動</button>
+
+                </div>      
+
+                <div class="socials mt-4">
+                    <a href="https://www.facebook.com/p/%25E6%25B9%2596%25E6%259D%25B1%25E4%25BC%2591%25E9%2596%2592%25E8%25BE%25B2%25E6%25A5%25AD%25E5%258D%2580-100076433973656/?locale=zh_TW" target="_blank">
+                        <img src="assets/imgs/FB.png" alt="Facebook" class="fb-button">
+                    </a>
+                    <a href="https://www.instagram.com/xihu_travel/" target="_blank">
+                        <img src="assets/imgs/IG.png" alt="instagram" class="ig-button">
+                    </a>
+                    <a href="https://www.youtube.com/@user-li1us4dj1u" target="_blank">
+                        <img src="assets/imgs/YT.png" alt="youtube" class="yt-button">
+                    </a>
+                </div>
+            </div>              
+            <div class="img-holder">
+                <img id="mainImage" src="assets/imgs/man.png" alt="Image">
+                <div class="arrow-button left" onclick="prevImage()"></div>
+                <div class="arrow-button right" onclick="nextImage()"></div>
+            </div>      
+        </div>  
+    </header>
+
+    <script>
+        const images = [
+            "assets/imgs/man.png",
+            "assets/imgs/桌布1.jpg",
+            "assets/imgs/桌布2.jpg"
+        ];
+        let currentIndex = 0;
+        let autoSwitchInterval;
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            document.getElementById("mainImage").src = images[currentIndex];
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            document.getElementById("mainImage").src = images[currentIndex];
+        }
+
+        function startAutoSwitch() {
+            autoSwitchInterval = setInterval(nextImage, 3000);
+        }
+
+        function stopAutoSwitch() {
+            clearInterval(autoSwitchInterval);
+        }
+
+        document.querySelector(".arrow-button.left").addEventListener("click", function() {
+            stopAutoSwitch();
+            prevImage();
+            startAutoSwitch();
+        });
+
+        document.querySelector(".arrow-button.right").addEventListener("click", function() {
+            stopAutoSwitch();
+            nextImage();
+            startAutoSwitch();
+        });
+
+        startAutoSwitch();
+    </script>
+
+
+    <!-- End of Page Header -->
+    
+    <!-- About section -->
+	
+    <section id="about" class="section mt-3">
+		<div class="green-bar bar1"></div>
+        <div class="container mt-5">
+            <div class="row text-center text-md-left">
+                <div class="col-md-3">
+                    <img src="assets/imgs/介紹.jpg" alt="" class="img-thumbnail mb-4">
+                </div>
+                <div class="pl-md-4 col-md-9">
+                    <h6 class="title">湖東休閒農業區</h6>
+                    <p class="subtitle">友善環境樂知足 柚鄉永續農村美</p>
+                    <p>苗栗縣西湖鄉是個典型的農業鄉，以文旦柚、白柚、蜜柚、柑橘、甘薯、龍眼、明日葉、山苦瓜、山葡萄、西湖米等農特產聞名，也有不少的歷史人文特色。「凝眸落照滿天紅，幾隻烏秋伴牧童。打木溪邊花似錦，高低燕子翦秋風。」台灣文學家吳濁流，旅居西湖十五年，曾對此地這般描景。</p>
+					<p>西湖鄉位於苗栗縣西境，行政區域分為九村，住民以客家族群為主，由於西湖溪縱貫全鄉，沿溪兩岸阡陌縱橫，綠野平稠，農業發達。近年來在全體鄉民與鄉公所的通力合作下，致力於西湖的環境景觀的提昇。以「環保之鄉」自豪的客家鄉親，秉持傳統，每戶庭園、道路都乾淨得令人驚嘆欣喜，城鄉新風貌的具體措施也逐步落實，展現清新可喜的田園風貌。在參與全省環境清潔競賽中更是名列前矛，成功的打開西湖鄉在全省的知名度，更獲得『世外桃源』的美譽。</p>
+					<p>西湖鄉境內擁有極佳的生態環境、富於變化的田園景觀及交橫錯綜的青山和綠水。更有豐富的人文史蹟，跨越了歲月和時空，烙下了歲月的印記和生命的吻痕。安排一趟知性、感性的西湖之旅，除了造訪幾處知名的景觀據點外，不妨配合時序進行專題旅遊，如「柚花季」、「文旦節」、「甘薯節」。此外，鄉公所也經常辦理導覽解說活動，遊客可考量旅程、興趣，選擇性地參與活動，品嚐優質的農特產與美食，走訪文化古蹟建築，感受這個「環保之鄉」特有的悠閒節奏，將可獲得與一般旅遊不同的體驗。</p>                
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="portfolio" class="section">
+	    <div class="green-bar bar2"></div>
+        <div class="container text-center">
+            <h6 class="subtitle">西湖趴趴走</h6>
+            <h6 class="section-title mb-4">景點介紹</h6>
+            <p class="mb-5 pb-4">湖東休閒農業區內農村風情及田園風光一直是旅遊首選，休閒區用心經營將西湖打造成一塊遠離塵囂、放鬆身心靈的空間 <br> 擁有小伯朗大道之稱的黃金一路、夫妻樹、雲梯書院、金龍窯、吳濁流藝文館、石雕媽祖像，及劉恩寬古宅等知名景點。</p>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="img-wrapper">
+                        <img src="assets/imgs/遊客中心.jpg" alt="">
+                        <div class="overlay">
+                            <div class="overlay-infos">
+                                <h5>遊客中心</h5>
+                                <a href="javascript:void(0)"><i class="ti-zoom-in"></i></a>
+                                <a href="javascript:void(0)"><i class="ti-link"></i></a>
+                            </div>  
+                        </div>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="assets/imgs/黃金一路.jpg" alt="">
+                        <div class="overlay">
+                            <div class="overlay-infos">
+                                <h5>黃金一路</h5>
+                                <a href="javascript:void(0)"><i class="ti-zoom-in"></i></a>
+                                <a href="javascript:void(0)"><i class="ti-link"></i></a>
+                            </div>                              
+                        </div>
+                    </div>       
+						<div class="img-wrapper">
+                        <img src="assets/imgs/KUMI捉迷藏.jpg" alt="">
+                        <div class="overlay">
+                            <div class="overlay-infos">
+                                <h5>KUMI捉迷藏</h5>
+                                <a href="javascript:void(0)"><i class="ti-zoom-in"></i></a>
+                                <a href="javascript:void(0)"><i class="ti-link"></i></a>
+                            </div>                              
+                        </div>
+                    </div>					
+                </div>
+                <div class="col-sm-4">
+                    <div class="img-wrapper">
+                        <img src="assets/imgs/吳濁流藝文館.jpg" alt="">
+                        <div class="overlay">
+                            <div class="overlay-infos">
+                                <h5>吳濁流藝文館</h5>
+                                <a href="javascript:void(0)"><i class="ti-zoom-in"></i></a>
+                                <a href="javascript:void(0)"><i class="ti-link"></i></a>
+                            </div>  
+                        </div>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="assets/imgs/宣王宮.jpg" alt="">
+                        <div class="overlay">
+                            <div class="overlay-infos">
+                                <h5>宣王宮</h5>
+                                <a href="javascript:void(0)"><i class="ti-zoom-in"></i></a>
+                                <a href="javascript:void(0)"><i class="ti-link"></i></a>
+                            </div>                              
+                        </div>
+                    </div>       
+						<div class="img-wrapper">
+                        <img src="assets/imgs/打鐵舖.jpg" alt="">
+                        <div class="overlay">
+                            <div class="overlay-infos">
+                                <h5>年盛鐵店</h5>
+                                <a href="javascript:void(0)"><i class="ti-zoom-in"></i></a>
+                                <a href="javascript:void(0)"><i class="ti-link"></i></a>
+                            </div>                              
+                        </div>
+                    </div>   					
+                </div>
+                <div class="col-sm-4">
+                    <div class="img-wrapper">
+                        <img src="assets/imgs/竹馬.jpg" alt="">
+                        <div class="overlay">
+                            <div class="overlay-infos">
+                                <h5>竹院如願</h5>
+                                <a href="javascript:void(0)"><i class="ti-zoom-in"></i></a>
+                                <a href="javascript:void(0)"><i class="ti-link"></i></a>
+                            </div>  
+                        </div>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="assets/imgs/穀倉.jpg" alt="">
+                        <div class="overlay">
+                            <div class="overlay-infos">
+                                <h5>傳統穀倉</h5>
+                                <a href="javascript:void(0)"><i class="ti-zoom-in"></i></a>
+                                <a href="javascript:void(0)"><i class="ti-link"></i></a>
+                            </div>                              
+                        </div>
+                    </div>  
+					<div class="img-wrapper">
+                        <img src="assets/imgs/多多龍.jpg" alt="">
+                        <div class="overlay">
+                            <div class="overlay-infos">
+                                <h5>多多龍有機農場</h5>
+                                <a href="javascript:void(0)"><i class="ti-zoom-in"></i></a>
+                                <a href="javascript:void(0)"><i class="ti-link"></i></a>
+                            </div>                              
+                        </div>
+                    </div> 					
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="blog" class="section">
+		<div class="green-bar bar3"></div>
+        <div class="container text-center">
+            <h6 class="section-title mb-4">影片介紹</h6>
+
+            <div class="row text-left">
+                <div class="col-md-4">
+                    <div class="card border mb-4">
+                          <img src="assets/imgs/影片縮圖3.jpg" alt="" class="card-img-top w-100">
+                        <div class="card-body">
+                            <h5 class="card-title">「實現低碳·治癒自然」</h5>
+                            <div class="post-details">
+                                <a href="javascript:void(0)">製作: 遊嘍西酷團隊</a>
+                                <a href="javascript:void(0)"><i class="ti-thumb-up"></i> 84</a>
+                                <a href="javascript:void(0)"><i class="ti-comment"></i> 3</a>
+                            </div>
+                            <p>苗栗西湖的低污染治癒旅遊幫助大家找回最單純的體驗.ᐟ‪.ᐟ‪</p>
+							<p>#苗栗景點 #暑假好去處 #苗栗秘境 #推薦 #苗栗旅遊 #低碳</p>
+                            <a href="https://www.instagram.com/reel/C9cgFPIPKC3/?utm_source=ig_web_copy_link" target="_blank">Read More..</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border mb-4">
+                        <img src="assets/imgs/影片縮圖1.jpg" alt="" class="card-img-top w-100">
+                        <div class="card-body">
+                            <h5 class="card-title">駐村週記📝 7/8-7/12</h5>
+                            <div class="post-details">
+                                <a href="javascript:void(0)">製作: 遊嘍西酷團隊</a>
+                                <a href="javascript:void(0)"><i class="ti-thumb-up"></i> 68</a>
+                                <a href="javascript:void(0)"><i class="ti-comment"></i> 1</a>
+                            </div>
+                            <p>來看看我們這一週都做了什麼事情吧～～</p>
+							<p>#苗栗景點📍 #暑假好去處 #苗栗秘境 #推薦 #低碳 #湖東休閒農業區 #聯合大學</p>
+                            <a href="https://www.instagram.com/reel/C9jC10Pv5RZ/?utm_source=ig_web_copy_link" target="_blank">Read More..</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border mb-4">
+                        <img src="assets/imgs/影片縮圖2.jpg" alt="" class="card-img-top w-100">
+                        <div class="card-body">
+                            <h5 class="card-title">第一次砍竹子</h5>
+                            <div class="post-details">
+                                <a href="javascript:void(0)">製作: 遊嘍西酷團隊</a>
+                                <a href="javascript:void(0)"><i class="ti-thumb-up"></i> 82</a>
+                                <a href="javascript:void(0)"><i class="ti-comment"></i> 9</a>
+                            </div>
+                            <p>想不到吧⋯砍竹子居然事件那麼困難的事！要低碳！真不容易啊🥲話說！美珍姐怎麼笑的那麼無情啊🥲頭很痛耶 嗚嗚嗚⋯⋯</p>
+							<p>#駐村 #低碳 #推薦 #湖東休閒農業區 #聯合大學</p>
+                            <a href="https://www.instagram.com/reel/C9nEl4qPpfW/?utm_source=ig_web_copy_link" target="_blank">Read More..</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="contact" class="position-relative section">
+
+        <div id="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3628.8829147654906!2d120.75578399999999!3d24.558707899999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3469a98b89c981a3%3A0x8199c0caffc30a04!2z6KW_5rmW6YSJ6YGK5a6i5pyN5YuZ5Lit5b-D44CU5rmW5p2x5LyR6ZaS6L6y5qWt5Y2A44CVKuaXhemBiuWSqOipouiIh-imj-WKgyo!5e0!3m2!1szh-TW!2stw!4v1721118802251!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>      
+    </section>
+
+    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+    <!-- bootstrap 3 affix -->
+	<script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+
+    <!-- steller js -->
+    <script src="assets/js/steller.js"></script>
+
+</body>
+</html>
